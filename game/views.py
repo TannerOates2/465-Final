@@ -15,3 +15,9 @@ def loginView(request):
         
     }
     return render(request,'login.html',context=context)
+
+
+def room(request, room_name):
+    return render(request, 'chat/room.html', {
+        'room_name': room_name
+    })
