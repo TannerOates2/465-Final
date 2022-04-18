@@ -10,8 +10,8 @@ from . import forms
 @login_required
 def homePageView(request):
     context = {
-        "title": "Home Page",
-        "header": "Stuff",   
+        "title": "Tic-Tac-Toe",
+        "header": "Tic-Tac-Toe",   
     }
     return render(request, 'index.html',context=context)
 
@@ -44,4 +44,4 @@ def login(request):
     
 def logout_user(request):
     logout(request)
-    return redirect("/login")
+    return redirect("/")
