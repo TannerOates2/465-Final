@@ -23,6 +23,15 @@
                     {{ form.password1 }}
                     <label>{{ form.password2.label_tag }}</label>
                     {{ form.password2 }}
+                    {% if form.errors %}
+                        {% for field in form %}
+                            {% for error in field.errors %} 
+                                <div class="alert alert-danger">
+                                    <strong>{{ error|escape }}</strong>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                    {% endif %}
                     <input type="submit" value="Register" class="button expanded"/>
                 </form>
             </div>

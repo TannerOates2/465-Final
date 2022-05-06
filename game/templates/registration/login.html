@@ -19,9 +19,17 @@
                 <div class="grid-x grid-padding-x">
                     <div class="medium-4 small-12 medium-offset-4 cell">
                         <h1>Login</h1>
-                        <form action="" method="post">
+                        <form action="/login/" method="post">
                             {% csrf_token %}
-                            {{ form.errors }}
+                            {% if form.errors %}
+                                {% for field in form %}
+                                    {% for error in field.errors %} 
+                                        <div class="alert alert-danger">
+                                            <strong>{{ error|escape }}</strong>
+                                        </div>
+                                    {% endfor %}
+                                {% endfor %}
+                            {% endif %}
                             <label>{{ form.username.label_tag }}</label>
                             {{ form.username }}
                             <label>{{ form.password.label_tag }}</label>

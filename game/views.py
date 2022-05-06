@@ -18,14 +18,12 @@ def homePageView(request):
 
 def register(request):
     if request.method == "POST":
-        form = forms.RegistrationForm(request.POST)
+        form = forms.RegistrationForm(request.POST or None)
         if form.is_valid():
-            user = form.save(request)
-            login(request,user)
-            messages.success(request, "Account created successfully")
-            return redirect("/home")
+            form.save(request)
+            return redirect("/login/")
     else:
-        form = forms.RegistrationForm(request.POST)
+        form = forms.RegistrationForm(request.POST or None)
 
     context = {
         "form": form,
@@ -33,15 +31,15 @@ def register(request):
         "header": "Register",
     }
     return render(request, 'registration/register.html',context=context)
-
-def login(request):
-    context = {
-        "title": "Login",
-        "header": "Login",
-    }
-    return render(request, 'registration/login.html',context=context)
-    
+   
     
 def logout_user(request):
     logout(request)
     return redirect("/")
+
+@login_required
+def account(request):
+    context = {
+        "title": "Account",   
+    }
+    return render(request, 'account.html',context=context)
