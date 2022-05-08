@@ -25,25 +25,28 @@
           </header>
         </div>
         <div class="container">
-            <h1 class="display-4">{{ header }}</h1>
-            <h3 class="display-6">Welcome to room: {{room_id}}</h3>
-            <div id = "game_board" room_id = {{room_id}} char_choice = {{char_choice}}>
-                <div class="square" data-index = '0'></div>
-                <div class="square" data-index = '1'></div>
-                <div class="square" data-index = '2'></div>
-                <div class="square" data-index = '3'></div>
-                <div class="square" data-index = '4'></div>
-                <div class="square" data-index = '5'></div>
-                <div class="square" data-index = '6'></div>
-                <div class="square" data-index = '7'></div>
-                <div class="square" data-index = '8'></div>
+            <div class="container1">
+                <h1 class="display-4">{{ header }}</h1>
+                <h3 class="display-6">Welcome to room: {{room_id}}</h3>
+                <div id = "game_board" room_id = {{room_id}} char_choice = {{char_choice}}>
+                    <div class="square" data-index = '0'></div>
+                    <div class="square" data-index = '1'></div>
+                    <div class="square" data-index = '2'></div>
+                    <div class="square" data-index = '3'></div>
+                    <div class="square" data-index = '4'></div>
+                    <div class="square" data-index = '5'></div>
+                    <div class="square" data-index = '6'></div>
+                    <div class="square" data-index = '7'></div>
+                    <div class="square" data-index = '8'></div>
+                </div>
+                <div id = "alertMove">Your turn. Place your move <strong>{{char_choice}}</strong></div>
             </div>
-            <div id = "alertMove">Your turn. Place your move <strong>{{char_choice}}</strong></div>
         </div>
         <div class="container">
             <h4 class="display-4">Chat</h4>
-            <textarea id="chat_input" class="form-control" rows="3" cols="5" placeholder="Enter your message..."></textarea>
-            <button id="chat_button" class="btn btn-primary">Send</button>
+            <textarea id="chat_box" class="form-control" rows="3" cols="1"></textarea>
+            <input id="msg" type="text" size="100" placeholder="Enter your message..."><br><br>
+            <input id="send" type="button" value="Send">
             <div id="chat_display"></div>
         </div>
     </body>

@@ -18,6 +18,7 @@ html {
 
 #game_board {
     display: grid;
+    place-content: center;
     grid-gap: 0.5em;
     grid-template-columns: repeat(3, 1fr);
     width: 16em;
@@ -45,10 +46,10 @@ input, select{
     margin-bottom: 10px;
     width: 100%;
     padding: 15px;
-    border: 1px solid #125a33;
+    border: 1px solid black;
     font-size: 14px;
-    background-color: #71d19e;
-    color: white;
+    background-color: #73b3f3;
+    color: black;
 }
 .button{
     color: white;
@@ -58,4 +59,20 @@ input, select{
     border: 0;
     border-radius: 2px;
     transition: all 150ms ease-out;
+}
+
+
+.container {
+    padding-left: 4em;
+    padding-right: 4em;
+}
+
+.container1 {
+    display: grid;
+    place-content: center;   
+}
+
+#alertMove {
+    display: grid;
+    place-content: center; 
 }
