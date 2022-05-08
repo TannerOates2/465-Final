@@ -1,0 +1,18 @@
+html {
+    overflow-y: hidden;
+    overflow-x: hidden;
+   }
+
+
+.nav-link {
+    color: rgb(0, 0, 0);
+    }
+    .nav-link:active {
+        color: rgb(0, 0, 0);
+    }
+    .nav-link:hover {
+        color: black;
+    }
+    .nav-link:visited {
+        color: rgb(0, 0, 0);
+    }
