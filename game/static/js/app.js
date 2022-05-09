@@ -9,6 +9,9 @@ if (window.location.protocol == "https:") {
 
 var connectStr = ws_scheme + window.location.host + '/ws/play/' + roomID + '/';
 var gameSocket = new WebSocket(connectStr);
+
+function noop() {}
+
 var board = [
     -1, -1, -1,
     -1, -1, -1,
@@ -192,4 +195,11 @@ document.querySelector('#send').onclick = function(e) {
     }));
     messageInputDom.value = '';
 };
+
+const ping = function() {
+    ws.ping(noop);
+  }
+  
+  setInterval(ping, 30000);
+
 connect();
