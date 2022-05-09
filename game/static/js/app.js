@@ -7,10 +7,9 @@ if (window.location.protocol == "https:") {
     var ws_scheme = "ws://"
   };
 
-var connectStr = ws_scheme + window.location.host + '/ws/play/' + roomID + '/';
+var connectStr = ws_scheme + 'tic-tac-toe-465.herokuapp.com' + '/ws/play/' + roomID + '/';
 var gameSocket = new WebSocket(connectStr);
 
-function noop() {}
 
 var board = [
     -1, -1, -1,
@@ -195,11 +194,5 @@ document.querySelector('#send').onclick = function(e) {
     }));
     messageInputDom.value = '';
 };
-
-const ping = function() {
-    ws.ping(noop);
-  }
-  
-  setInterval(ping, 30000);
 
 connect();
