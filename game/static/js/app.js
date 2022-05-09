@@ -1,7 +1,13 @@
 var roomID = document.getElementById("game_board").getAttribute("room_id");
 var char_choice = document.getElementById("game_board").getAttribute("char_choice");
 
-var connectStr = 'wss://' + window.location.host + '/ws/play/' + roomID + '/';
+if (window.location.protocol == "https:") {
+    var ws_scheme = "wss://";
+  } else {
+    var ws_scheme = "ws://"
+  };
+
+var connectStr = ws_scheme + window.location.host + '/ws/play/' + roomID + '/';
 var gameSocket = new WebSocket(connectStr);
 var board = [
     -1, -1, -1,
