@@ -9,6 +9,6 @@ from .consumers import TicTacToeConsumer
 
 
 websocket_urlpatterns = [
-    url(r'^wss/play/(?P<room_id>\w+)/$', TicTacToeConsumer.as_asgi()),
+    url(r'^ws/play/(?P<room_id>\w+)/$', TicTacToeConsumer.as_asgi()),
    
 ]
