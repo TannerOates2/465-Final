@@ -17,7 +17,7 @@ SECRET_KEY = os.environ.get('TICTACTOE_SECRET_KEY')
 #DEBUG = os.environ.get('DEBUG_VALUE')
 DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
-ALLOWED_HOSTS = ['tic-tac-toe-465.herokuapp.com']
+ALLOWED_HOSTS = ['tic-tac-toe-465.herokuapp.com', 'localhost', ]
 
 
 # Application definition
