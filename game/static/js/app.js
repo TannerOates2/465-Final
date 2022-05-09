@@ -155,7 +155,7 @@ function connect() {
                 }
                 break;
             case "CHAT":
-                document.querySelector('#chat_box').innerHTML= (message + '\n');
+                document.querySelector('#chat_box').value= (message + '\n');
                 break;
             default:
                 console.log("No event")
