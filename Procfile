@@ -9,5 +9,5 @@
 web: gunicorn final.wsgi
 #web: daphne final.asgi:channel_layer --port $PORT --bind 0.0.0.0 -v2
 #worker: python manage.py runworker -v2
-web: daphne final.asgi:channel_layer --port 8888
+web: daphne final.asgi:channel_layer --port 8001
 worker: python manage.py runworker -v2
