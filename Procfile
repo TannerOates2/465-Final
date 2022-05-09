@@ -14,5 +14,5 @@ web: gunicorn final.wsgi
 #worker: python manage.py runworker -v2
 #web: daphne final.asgi:application --port 8001
 #worker: python manage.py runworker -v2
-web: daphne final.asgi:application --port $PORT --bind 0.0.0.0 -v2
+web: daphne final.asgi:channel_layer --port $PORT --bind 0.0.0.0 -v2
 chatworker: python manage.py runworker --settings=final.settings -v2
