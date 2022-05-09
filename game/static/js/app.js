@@ -154,6 +154,9 @@ function connect() {
                     document.getElementById("alertMove").style.display = 'inline';        
                 }
                 break;
+            case "CHAT":
+                document.querySelector('#chat_box').innerHTML= (message + '\n');
+                break;
             default:
                 console.log("No event")
         }
@@ -163,5 +166,24 @@ function connect() {
         gameSocket.onopen();
     }
 }
+/////////////////////////////////////////////////////
 
+
+
+document.querySelector('#msg').focus();
+document.querySelector('#msg').onkeyup = function(e) {
+    if (e.keyCode === 13) {  // enter, return
+        document.querySelector('#send').click();
+    }
+};
+
+document.querySelector('#send').onclick = function(e) {
+    const messageInputDom = document.querySelector('#msg');
+    const message = messageInputDom.value;
+    gameSocket.send(JSON.stringify({
+        "event": "CHAT",
+        'message': message
+    }));
+    messageInputDom.value = '';
+};
 connect();

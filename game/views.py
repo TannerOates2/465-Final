@@ -34,7 +34,7 @@ def game(request, room_id):
         "char_choice": choice, 
         "room_id": room_id
     }
-    return render(request, "board.html", context)
+    return render(request, "board.html", context,)
 
 
 def register(request):
