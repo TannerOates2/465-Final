@@ -16,9 +16,9 @@ SECRET_KEY = os.environ.get('TICTACTOE_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = os.environ.get('DEBUG_VALUE')
 DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
-
+#DEBUG = True
 ALLOWED_HOSTS = ['tic-tac-toe-465.herokuapp.com', 'localhost', ]
-
+#ALLOWED_HOSTS=[]
 
 # Application definition
 
@@ -61,7 +61,7 @@ TEMPLATES = [
     },
 ]
 
-# WSGI_APPLICATION = 'final.wsgi.application'
+WSGI_APPLICATION = 'final.wsgi.application'
 
 # Channels
 ASGI_APPLICATION = "final.asgi.application"
