@@ -65,9 +65,18 @@ WSGI_APPLICATION = 'final.wsgi.application'
 
 # Channels
 ASGI_APPLICATION = "final.asgi.application"
+#CHANNEL_LAYERS = {
+#    'default': {
+#        "BACKEND": "channels.layers.InMemoryChannelLayer"
+#    },
+#}
 CHANNEL_LAYERS = {
-    'default': {
-        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    "default": {
+        "BACKEND": "asgi_redis.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
+        },
+        "ROUTING": "final.routing.channel_routing",
     },
 }
 
