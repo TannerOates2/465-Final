@@ -1,6 +1,6 @@
 from pathlib import Path
 import os
-#import django_heroku
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -10,15 +10,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '%4nt#t6fw&d1%3abpe02$e5(#c8e9p%-v=doal8cg3y^wo5j2l'
-#SECRET_KEY = os.environ.get('TICTACTOE_SECRET_KEY')
+#SECRET_KEY = '%4nt#t6fw&d1%3abpe02$e5(#c8e9p%-v=doal8cg3y^wo5j2l'
+SECRET_KEY = os.environ.get('TICTACTOE_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = os.environ.get('DEBUG_VALUE')
-#DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
-DEBUG = True
-#ALLOWED_HOSTS = ['tic-tac-toe-465.herokuapp.com', 'localhost', ]
-ALLOWED_HOSTS=[]
+DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
+#DEBUG = True
+ALLOWED_HOSTS = ['tic-tac-toe-465.herokuapp.com', 'localhost', ]
+#ALLOWED_HOSTS=[]
 
 # Application definition
 
@@ -64,11 +64,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'final.wsgi.application'
 
 # Channels
-ASGI_APPLICATION = "final.asgi.application"
+#ASGI_APPLICATION = "final.asgi.application"
 #CHANNEL_LAYERS = {
 #    'default': {
 #        "BACKEND": "channels.layers.InMemoryChannelLayer"
-#    },
+#   },
 #}
 CHANNEL_LAYERS = {
     "default": {
@@ -79,6 +79,7 @@ CHANNEL_LAYERS = {
         "ROUTING": "final.routing.channel_routing",
     },
 }
+
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -138,4 +139,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = "home"
 LOGIN_URL = ''
 
-#django_heroku.settings(locals())
+django_heroku.settings(locals())
